@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<swiper class="swiper-container" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <!-- 第一张轮播图内容 -->
+  <swiper-item>
+    <image src="https://i0.hdslb.com/bfs/banner/4633aa7af857b30771817d2f7492fe80ac39d84f.png@976w_550h_1c_!web-home-carousel-cover.avif">a</image>
+  </swiper-item>
+    <!-- 第二张轮播图内容 -->
+  <swiper-item>
+    <image src="https://i0.hdslb.com/bfs/banner/86e1d328d44f98487eacf06780ff5d1a3a83649c.jpg@976w_550h_1c_!web-home-carousel-cover.avif"></image>
+  </swiper-item>
+</swiper>
+
+<view class=".functions">
+  <view class="function">管理</view>
+  <view class="function">土地</view>
+  <view class="function">器械</view>
+  <view class="function">人员</view>
+  <view class="function">运输</view>
+  <view class="function">营收</view>
+</view>

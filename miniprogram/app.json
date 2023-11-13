@@ -1,0 +1,30 @@
+{
+  "tabBar": {
+  "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/image/tabs/home.png",
+      "selectedIconPath": "/image/tabs/home-active.png"
+    },
+    {
+      "pagePath": "pages/user/user",
+      "text": "企业",
+      "iconPath": "/image/tabs/enterprise.png",
+      "selectedIconPath": "/image/tabs/enterprise-active.png"
+    }
+  ]
+},
+  "pages": [
+    "pages/index/index",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "中小微农企业资金管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
