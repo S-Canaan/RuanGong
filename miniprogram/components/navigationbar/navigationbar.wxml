@@ -1,0 +1,11 @@
+<!--components/navigationbar/navigationbar.wxml-->
+<view style="height: {{navBarHeight}}rpx; "></view>
+
+<view  class="bar" style="height: {{2*menuHeight}}rpx; min-height:{{2*menuHeight}}rpx; ">
+    <image style="margin-left: {{2*menuRight}}rpx;" bindtap="gotoBack" class="navImage" src="../../image/navigationbar/video_retrue.png"></image>
+    <image style="margin-left: {{menuRight}}rpx;" bindtap="gotoHome" class="navImage" src="../../image/navigationbar/video_index.png"></image>
+
+    <picker style="margin-left: {{4*menuRight}}rpx;margin-bottom:{{menuBotton}}rpx;" class="selector" mode="selector" bindchange="onChange" range="{{functionArr}}">{{selectedFunction}}</picker>
+    
+</view>
+

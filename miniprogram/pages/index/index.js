@@ -1,6 +1,5 @@
 // index.ts
 // 获取应用实例
-
 Page({
   data: {
     motto: 'Hello World',
@@ -14,11 +13,26 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
+    selectArray: [
+      {
+        "id": "0",
+        "text": "全部"
+      },
+      {
+        "id": "10",
+        "text": "张三"
+      },
+      {
+        "id": "21",
+        "text": "李四"
+      }
+    ],
   },
   // 事件处理函数
-  bindViewTap() {
+  gotoFunction:function(e){
+    const url = '../functions/' + e.target.id +'/' +e.target.id +'?id='+e.target.id ;
     wx.navigateTo({
-      url: '../logs/logs',
+      url,
     })
   },
   onLoad() {
@@ -42,12 +56,15 @@ Page({
       }
     })
   },
-  getUserInfo(e: any) {
+  getUserInfo(e) {
     // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
     console.log(e)
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  getDate: function (e) {
+    console.log(e)//选中的值
+  },
 })

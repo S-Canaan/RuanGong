@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "查看启动日志",
-  "usingComponents": {}
+  "navigationBarTitleText": "中小微农企业资金管理系统",
+  "usingComponents": {},
+  "backgroundColor": "#000000"
 }

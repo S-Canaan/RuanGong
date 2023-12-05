@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {
+ "compilerOptions": {
     "strictNullChecks": true,
     "noImplicitAny": true,
     "module": "CommonJS",
@@ -22,8 +22,10 @@
     ]
   },
   "include": [
-    "./**/*.ts"
-  ],
+    "./**/*.ts", 
+    "miniprogram/pages/index/index.js", 
+    "miniprogram/components/select/select.js",
+    "miniprogram/pages/user/user.js", "miniprogram/app.js", "miniprogram/app.js"  ],
   "exclude": [
     "node_modules"
   ]

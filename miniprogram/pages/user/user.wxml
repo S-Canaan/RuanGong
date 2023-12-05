@@ -1,6 +1,32 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log.date}}</text>
-  </block>
-</view>
+<view class="backGround"></view>
+<!-- 未登录时的页面 -->
+<block wx:if="{{!hasUserInfo}}">
+  <view class="container-out">
+      <view class="faceOut"></view>
+      <view class="textout">
+          <view class="word1">
+               <text>未登录</text>
+          </view>
+          <view class="word2">
+               <text>请点击登陆后使用全部功能</text>
+          </view>
+      </view>
+  </view>
+  <button bindtap="getUersProfile" class="btn">登录</button>
+</block>
+<!-- 登陆后的页面 -->
+<block wx:if="{{hasUserInfo}}">
+<!-- 头像，用户名，招呼 -->
+  <view class="container-in">
+    <open-data type="userAvatarUrl" class="touxiang"></open-data>
+    <view class="wenZi">
+       <view class="word4">
+          Hi
+       </view>
+      <open-data type="userNickName" class="word1"></open-data>
+    </view>
+  </view>
+  <view class="loginOut" bindtap="loginOut">
+       <button>退出登录</button>
+  </view>
+</block>

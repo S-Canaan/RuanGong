@@ -1,0 +1,11 @@
+<!--Componet/select/select.wxml-->
+<view class='com-selectBox'>
+    <view class='com-sContent' bindtap='selectToggle'>
+      <input value="{{nowText==''?propArray[0].text : nowText}}" placeholder="请选择" bindinput="vagueFun"></input>
+        <view class='com-sTxt'></view>
+        <image src='../../images/tip1.png'  class='com-sImg'  animation="{{animationData}}"></image>
+    </view>
+    <view class='com-sList' wx:if="{{selectShow}}">
+        <view wx:for="{{selectData}}" data-index="{{item.id}}" wx:key='' class='com-sItem' bindtap='setText'>{{item.text}}</view>
+    </view>
+</view>

@@ -1,0 +1,3 @@
+<!--pages/functions/equipment/equipment.wxml-->
+<navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick"></navigation>
+1

@@ -1,0 +1,18 @@
+/* components/navigationbar/navigationbar.wxss */
+.bar {
+  display: flex;
+  align-items: center; /* 设置垂直居中 */
+}
+
+.navImage {
+	height: 50rpx;
+	width: 50rpx;
+
+	display: inline-block;
+  vertical-align: middle; /* 设置垂直对齐方式 */
+}
+
+.selector {
+	display: inline-block;
+
+}

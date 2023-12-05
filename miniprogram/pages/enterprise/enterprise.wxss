@@ -1,3 +1,4 @@
+/* pages/enterprise.wxss */
 page {
   background-color: #ededed;
 }
@@ -5,7 +6,6 @@ page {
 .backGround {
   width: 100%;
   height: 490rpx;
-  background-color: #2b4b6b;
   border-radius: 0 0 25rpx 25rpx;
   overflow: hidden;
 }
@@ -111,3 +111,130 @@ page {
 .loginOut {
   margin-top: 100rpx;
 }
+
+/* ***************************************** */
+.w {
+  margin: 30rpx auto;
+  width: 600rpx;
+}
+
+.header {
+  margin: 30rpx auto;
+  height: 200rpx;
+  width: 600rpx;
+
+  padding: 25rpx;
+
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+
+.enterImage {
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.enterNaAdBlock {
+  display: inline-block;
+  margin-left: 50rpx;
+}
+
+.enterName {
+  margin-bottom: 20rpx;
+}
+
+.enterAddress {
+  margin-bottom: 20rpx;
+}
+
+/*************************/
+.enterMainInfo {
+  padding: 20rpx;
+
+  border: 1px solid #000;
+  border-radius: 10rpx;
+
+}
+
+.enterInfoTitle {
+  margin-left: 20rpx;
+  font-size: large;
+}
+
+.enterInfoContent {
+  margin-top: 20rpx;
+  font-size: small;
+}
+
+.servers {
+  margin-top: 40rpx;
+}
+
+.enterServerTitle{
+  margin-left: 20rpx; 
+  margin-bottom: 20rpx;
+}
+
+.enterServerContent {
+  height: 200rpx;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 1px solid #000;
+  border-radius: 10rpx;
+}
+
+.server {
+  margin-top: 10rpx;
+}
+
+.serverImage {    
+  display: block;
+  margin: auto;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.editEnterInfo {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 37rpx;
+  
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+
+.arrow {
+  position: absolute;
+  right: 37rpx;
+  margin-top:37rpx;
+  height: 26rpx;
+  width: 26rpx;
+}
+
+
+.enterOtherInfo {
+
+  padding: 20rpx;
+
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+
+.enterOtherInfoTitle {
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: large;
+}
+
+.verison {
+  text-align: center;
+  margin-top: 20rpx;
+}
+

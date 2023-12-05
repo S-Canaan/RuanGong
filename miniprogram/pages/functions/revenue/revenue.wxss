@@ -1,0 +1,11 @@
+/* pages/functions/revenue/revenue.wxss */
+.selectSenson {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	height: 70rpx;
+	
+	font-size: large;
+	font-weight: bold;
+	color: #567722;
+}

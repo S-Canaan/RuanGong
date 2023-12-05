@@ -1,0 +1,28 @@
+<!--pages/editEnterprise/editEnterprise.wxml-->
+<view class="infoItem">
+	企业LOGO                        
+  <image class="LOGO" src="../../image/test/img.png"></image>
+  <image class="arrow" src="../../image/enterpr/arrow.png"></image>
+</view>
+<view class="infoItem" bindtap="showInput" id="name">
+	企业名称
+	<view class="itemContent" data-parent-id="name">{{name}}</view>                       
+  <image class="arrow" src="../../image/enterpr/arrow.png"  data-parent-id="name"></image>
+</view>
+<picker mode="date" class="infoItem"  bindchange="dateChangeHandler" value="date" id="date">
+	成立日期                        
+	<view class="itemContent"  data-parent-id="date">{{date}}</view>  
+  <image class="arrow" src="../../image/enterpr/arrow.png" data-parent-id="date"></image>
+</picker>
+<view class="infoItem" bindtap="showInput" id="num">
+	员工人数                 
+	<view class="itemContent" data-parent-id="num">{{num}}人</view>  
+  <image class="arrow" src="../../image/enterpr/arrow.png" data-parent-id="num"></image>
+</view>
+<view class="infoItem" bindtap="showInput" id="introduction">
+	企业简介                        
+	<view class="itemContent" data-parent-id="introduction">{{introduction}}</view>  
+  <image class="arrow" src="../../image/enterpr/arrow.png" data-parent-id="introduction"></image>
+</view>
+<textarea  class="inputArea" wx:if="{{inputVisible}}" value="{{inputText}}" bindblur="updateDisplayText" focus="{{inputVisible}}"></textarea >
+<button bindtap="saveChanges" class="save-button">保存修改</button>

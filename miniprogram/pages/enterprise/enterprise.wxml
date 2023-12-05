@@ -1,0 +1,71 @@
+<!--pages/enterprise.wxml-->
+<!-- 未登录时的页面 -->
+<block wx:if="{{!openID}}">
+<view class="backGround"></view>
+  <view class="container-out">
+      <view class="faceOut"></view>
+      <view class="textout">
+          <view class="word1">
+               <text>未登录</text>
+          </view>
+          <view class="word2">
+               <text>请点击登陆后使用全部功能</text>
+          </view>
+      </view>
+  </view>
+</block>
+<block wx:if="{{openID}}">
+<view class="w">
+  <view class="header">
+    <image src="../../image/test/img.png" alt="" class="enterImage"/>
+    <view class="enterNaAdBlock">
+      <view class="enterName word3">{{enterName}}</view>
+      <view class="enterAddress word4">{{enterAddress}}</view>
+    </view>
+  </view>
+
+  <view class="enterMainInfo">
+    <view class="enterInfo">
+      <view class="enterInfoTitle">企业信息</view>
+      <view class="enterInfoContent"> 这是一段需要自动换行的文本，这是一段需要自动换行的文本，这是一段需要自动换行的文本。</view>
+    </view>
+
+    <view class="servers">
+      <view class="enterServerTitle">产品与服务</view>
+      <view class="enterServerContent">
+        <view class="serve">
+          <image src="../../image/enterpr/ask.png" class="serverImage"></image>
+          <view class="serverTitle">农业咨询</view>
+        </view>
+        <view class="serve">
+          <image src="../../image/enterpr/ad.png" class="serverImage"></image>
+          <view class="serverTitle">市场推广</view>
+        </view>
+        <view class="serve">
+          <image src="../../image/enterpr/trans.png" class="serverImage"></image>
+          <view class="serverTitle">物流配送</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view bindtap="gotoEdit" class="editEnterInfo">
+    公司信息                                
+    <image class="arrow" src="../../image/enterpr/arrow.png"></image>
+  </view>
+
+  <view class="enterOtherInfo">
+    <view class="enterOtherInfoTitle">
+    反馈与评价
+    </view>
+    <view class="enterPhone">
+    <image src="../../image/enterpr/phone.png" style="height: 30rpx; width: 30rpx;" class="enterOtherInfoImage"></image>
+    联系方式：123-123-123</view>
+    <view class="enterEmail">
+    <image src="../../image/enterpr/email.png" style="height: 30rpx; width: 30rpx;" class="enterOtherInfoImage"></image>
+    联系邮箱：123456789@email</view>
+
+    <view class="verison">版本号：0.0.1</view>
+  </view>
+</view>
+</block>

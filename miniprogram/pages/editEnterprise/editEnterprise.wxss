@@ -1,0 +1,71 @@
+/* pages/editEnterprise/editEnterprise.wxss */
+.infoItem {
+	height: 150rpx;
+	padding-left: 30rpx;
+
+	position: relative;
+	
+	border-radius: 10rpx;
+	
+	line-height: 150rpx;
+}
+
+.itemContent {
+	display: inline-block;
+	position: absolute;
+	right: 100rpx;
+	
+	white-space: nowrap;         
+  overflow: hidden;            
+  text-overflow: ellipsis;     
+  max-width: 50%;   
+}
+
+
+
+.arrow {
+  position: absolute;
+	right: 37rpx;
+	top: 62rpx;
+  height: 26rpx;
+  width: 26rpx;
+}
+
+.LOGO {
+	position: absolute;
+	right: 100rpx;
+	top: 25rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.textarea-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.inputArea {
+  width: 95%;
+	
+	margin: 30rpx auto;
+	padding: 15rpx;
+	border: 1px solid black;
+	border-radius: 20rpx;
+	box-sizing: border-box;
+
+  outline: none;
+  resize: none; /* 禁止用户调整输入框大小 */
+  font-size: 16px;
+  line-height: 1.5;
+}
+.save-button {
+  /* 保存按钮样式 */
+  background-color: #4CAF50; /* 绿色背景色 */
+  color: white; /* 白色文字颜色 */
+  padding: 10px 20px; /* 按钮内边距 */
+  border: none; /* 移除边框 */
+  border-radius: 5px; /* 圆角 */
+  font-size: 16px; /* 字体大小 */
+  cursor: pointer; /* 鼠标悬停样式 */
+}

@@ -10,11 +10,11 @@
   </swiper-item>
 </swiper>
 
-<view class=".functions">
-  <view class="function">管理</view>
-  <view class="function">土地</view>
-  <view class="function">器械</view>
-  <view class="function">人员</view>
-  <view class="function">运输</view>
-  <view class="function">营收</view>
+<view class=".functions" bindtap="gotoFunction">
+  <view class="function" id="management">管理</view>
+  <view class="function" id="land">土地</view>
+  <view class="function" id="equipment">器械</view>
+  <view class="function" id="personnel">人员</view>
+  <view class="function" id="transportation">运输</view>
+  <view class="function" id="revenue">营收</view>
 </view>

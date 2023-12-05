@@ -1,0 +1,3 @@
+<!--pages/functions/revenue/revenue.wxml-->
+<navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick">123123123123</navigation>
+<view class="selectSenson" >选择季节</view>
