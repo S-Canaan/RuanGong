@@ -1,0 +1,17 @@
+<!--components/tabBar/tabBar.wxml-->
+<view class="tabBar" >
+  <view class="tabBarItem" bindtap="goto" id="index">
+    <image class="tabBarImage" src="../../image/tabs/home.png"></image>
+    <view class="tabBarTitle">首页</view>
+  </view>
+  
+  <view class="tabBarItem" bindtap="goto" id="enterprise">
+    <image class="tabBarImage" src="../../image/tabs/enterprise.png"></image>
+    <view class="tabBarTitle">企业</view>
+  </view>
+  
+  <view class="tabBarItem" bindtap="goto" id="user">
+    <image class="tabBarImage" src="../../image/tabs/user.png"></image>
+    <view class="tabBarTitle">用户</view>
+  </view>
+</view>

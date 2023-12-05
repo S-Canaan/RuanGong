@@ -5,6 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sensonArr:['春季','夏季','秋季','冬季'],
+    selectSeason:'春季',
+
+  },
+  onChange:function () {
+    console.log("更换季节");
   },
   onCustomClick:function(event){
     // 在这里处理自定义组件点击事件的逻辑

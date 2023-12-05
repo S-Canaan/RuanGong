@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    landArr:[],
+    land:''
   },
   onCustomClick:function(event){
     // 在这里处理自定义组件点击事件的逻辑
@@ -16,8 +18,11 @@ Page({
    */
   onLoad(options) {
     const id = options.id
+    const landArr = ['红星大道1号','李四'] || []
     this.setData({
       id:id,
+      land:landArr[0] || '无土地',
+      landArr:landArr
     })
   },
 

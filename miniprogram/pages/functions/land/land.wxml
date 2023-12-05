@@ -1,3 +1,94 @@
 <!--pages/functions/land/land.wxml-->
 <navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick"></navigation>
-2
+
+<view class="selectSenson" >选择土地</view>
+<picker class="selector" mode="selector" id="manager" range="{{landArr}}" bindchange="onChange" >{{land}}
+</picker>
+
+<view class="title">折旧费用</view>
+<view class="Box" style="height: 200rpx;">
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/land.png"></image>
+    <view class="itemTitle">土地购买成本</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/clock.png"></image>
+    <view class="itemTitle">使用寿命</view>
+  </view>
+
+  <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+
+<view class="title">租聘费用</view>
+<view class="Box"  style="height: 300rpx;">
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/clock.png"></image>
+    <view class="itemTitle">租期</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/clock.png"></image>
+    <view class="itemTitle">租金金额</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/price.png"></image>
+    <view class="itemTitle">租金金额</view>
+  </view>
+
+  <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+
+
+<view class="title">租聘信息</view>
+<view class="Box"  style="height: 400rpx;">
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/type.png"></image>
+    <view class="itemTitle">类型</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/price.png"></image>
+    <view class="itemTitle">费用</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/clock.png"></image>
+    <view class="itemTitle">日期</view>
+  </view>
+
+  <view class="item"  >
+    <image class="itemImage" src="../../../image/land/method.png"></image>
+    <view class="itemTitle">是否固定支出</view>
+  </view>
+
+  <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+
+<view class="title">政策信息</view>
+<view class="Box" style="height: 100rpx;">
+  <view class="item">
+    <image class="itemImage" src="../../../image/land/policy.png"></image>
+    <view class="itemTitle">政策优惠</view>
+  </view>
+
+  <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+<view class="totalCost">
+  <view>总成本</view>
+  <view>
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+<tabBar></tabBar>
+<view style="height: 200rpx;"></view>

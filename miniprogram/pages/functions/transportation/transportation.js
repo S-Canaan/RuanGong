@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    date:'当月',
   },
   onCustomClick:function(event){
     // 在这里处理自定义组件点击事件的逻辑
@@ -20,6 +21,14 @@ Page({
       id:id,
     })
   },
+  onChange: function(event){
+    const date = event.detail.value.slice(0,7);
+    console.log(date);
+    this.setData({
+      date: date
+    });
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

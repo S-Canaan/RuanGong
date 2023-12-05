@@ -1,1 +1,96 @@
-/* pages/functions/equipment/equipment.wxss */
+/* pages/functions/personnel/personnel.wxss */
+.selectSenson {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	height: 70rpx;
+	
+	font-size: large;
+	font-weight: bold;
+	color: #567722;
+}
+
+.selector {
+  margin: 30rpx auto;
+  width: 50%;
+  height: 70rpx;
+
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  box-sizing: border-box;
+  border: darkgray 1rpx solid;
+  border-radius: 20rpx;
+
+	font-weight: bold;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	height: 70rpx;
+	
+	font-size: large;
+}
+
+.Box {
+  height: 150rpx;
+  width: 80%;
+  margin: 30rpx auto;
+  padding: 20rpx;
+
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  box-sizing: border-box;
+  border: solid 1rpx grey;
+  border-radius: 20rpx;
+}
+
+.item {
+	display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+
+.itemImage {
+  height: 50rpx;
+  width: 50rpx;
+  margin: 0 30rpx;
+
+  display: inline-block;
+}
+
+.RMB {
+  height: 50rpx;
+  width: 50rpx;
+  position: absolute;
+  right: 100rpx;
+  bottom: 10rpx;
+}
+
+.price {
+  position: absolute;
+  right: 20rpx;
+  bottom: 10rpx;
+}
+
+.totalCost {
+  position: fixed;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  
+  bottom: 7%;
+  left: 0;
+  right: 0;
+
+  background-color: #ffffff;
+  box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.1); 
+}
+

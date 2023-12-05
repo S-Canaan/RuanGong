@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    personArr:[],
+    person:""
   },
   onCustomClick:function(event){
     // 在这里处理自定义组件点击事件的逻辑
@@ -16,8 +18,11 @@ Page({
    */
   onLoad(options) {
     const id = options.id
+    const personArr = ['张三','李四'] || []
     this.setData({
       id:id,
+      person:personArr[0] || '无员工',
+      personArr:personArr
     })
   },
 

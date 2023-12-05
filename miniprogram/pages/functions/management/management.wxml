@@ -1,3 +1,38 @@
 <!--pages/functions/management/management.wxml-->
 <navigation id="navigation" indexId="{{id}}"  bind:customClick="onCustomClick">123123123123</navigation>
-3
+
+<view class="selectSenson" >选择管理人员</view>
+<picker class="selector" mode="selector" id="manager" range="{{managerArr}}" bindchange="onChange" >{{maganer}}
+</picker>
+
+<view class="title">管理费用控制</view>
+<view class="Box">
+  <view class="item">
+    <image class="itemImage" src="../../../image/management/bill.png"></image>
+    <view class="itemTitle">近期报销账单</view>
+  </view>
+
+  <image class="RMB" src="../../../image/management/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+
+<view class="title">活动审查</view>
+<view class="Box">
+  <view class="item">
+    <image class="itemImage" src="../../../image/management/type.png"></image>
+    <view class="itemTitle">是否存在违规现象</view>
+  </view>
+
+  <image class="RMB" src="../../../image/management/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+<view class="totalCost">
+  <view>总成本</view>
+  <view>
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+<tabBar></tabBar>

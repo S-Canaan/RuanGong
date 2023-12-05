@@ -1,3 +1,76 @@
 <!--pages/functions/revenue/revenue.wxml-->
 <navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick">123123123123</navigation>
 <view class="selectSenson" >选择季节</view>
+<picker class="selector" mode="selector" bindchange="onChange" range="{{sensonArr}}">{{selectSeason}}</picker>
+
+
+<view class="item">
+  <view class="title">农品种类</view>
+  <view class="itemBox">
+    <image class="itemImage" src="../../../image/revenue/xiaomai.png"></image>
+    <view style="display: inline-block;">种植农业品</view>
+  </view>
+</view>
+
+<view class="item">
+  <view class="title">播种</view>
+  <view class="itemBox">
+    <image class="itemImage" src="../../../image/revenue/seed.png"></image>
+    <view style="display: inline-block;">播种花销</view>
+
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+
+<view class="item">
+  <view class="title">灌溉</view>
+  <view class="itemBox">
+    <image class="itemImage" src="../../../image/revenue/water.png"></image>
+    <view style="display: inline-block;">灌溉花销</view>
+
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+
+<view class="item">
+  <view class="title">施肥</view>
+  <view class="itemBox">
+    <image class="itemImage" src="../../../image/revenue/spread.png"></image>
+    <view style="display: inline-block;">施肥花销</view>
+
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+
+<view class="item">
+  <view class="title">收割</view>
+  <view class="itemBox">
+    <image class="itemImage" src="../../../image/revenue//harvest.png"></image>
+    <view style="display: inline-block;">收割花销</view>
+
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+
+<view class="item">
+  <view class="title">收获</view>
+  <view class="itemBox">
+    <image class="itemImage" src="../../../image/revenue/gains.png"></image>
+    <view style="display: inline-block;">市场收获</view>
+
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+<view class="totalCost">
+  <view>总成本</view>
+  <view>
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+<tabBar></tabBar>

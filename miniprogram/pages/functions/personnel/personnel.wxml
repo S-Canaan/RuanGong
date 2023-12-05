@@ -1,3 +1,73 @@
 <!--pages/functions/personnel/personnel.wxml-->
-<navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick">123123123123</navigation>
-4
+<navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick"></navigation>
+
+<view class="selectSenson" >选择土地</view>
+<picker class="selector" mode="selector" id="manager" range="{{personArr}}" bindchange="onChange" >{{person}}
+</picker>
+
+<view class="title">薪资工资</view>
+<view class="Box" style="height: 200rpx;">
+  <view class="item">
+    <image class="itemImage" src="../../../image/personnel/wallet.png"></image>
+    <view class="itemTitle">基本工资</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/personnel/clock.png"></image>
+    <view class="itemTitle">工时</view>
+  </view>
+
+  <image class="RMB" src="../../../image/personnel/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+
+<view class="title">福利成本</view>
+<view class="Box"  style="height: 300rpx;">
+  <view class="item">
+    <image class="itemImage" src="../../../image/personnel/insure1.png"></image>
+    <view class="itemTitle">社会保险</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/personnel/insure2.png"></image>
+    <view class="itemTitle">医疗保险</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/personnel/pension.png"></image>
+    <view class="itemTitle">养老金</view>
+  </view>
+
+  <image class="RMB" src="../../../image/personnel/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+
+
+<view class="title">劳动生产</view>
+<view class="Box"  style="height: 200rpx;">
+  <view class="item">
+    <image class="itemImage" src="../../../image/personnel/type.png"></image>
+    <view class="itemTitle">员工工作产出</view>
+  </view>
+
+  <view class="item">
+    <image class="itemImage" src="../../../image/personnel/method.png"></image>
+    <view class="itemTitle">KPI是否达标</view>
+  </view>
+
+  <image class="RMB" src="../../../image/personnel/RMB.png" alt=""/>
+  <view class="price">xx.xx</view>
+</view>
+
+<view class="totalCost">
+  <view>总成本</view>
+  <view>
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">xx.xx</view>
+  </view>
+</view>
+<tabBar></tabBar>
+
+<view style="height: 200rpx;"></view>

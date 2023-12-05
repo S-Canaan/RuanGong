@@ -9,3 +9,82 @@
 	font-weight: bold;
 	color: #567722;
 }
+
+.selector {
+  margin: 30rpx auto;
+  width: 50%;
+  height: 70rpx;
+
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  box-sizing: border-box;
+  border: darkgray 1rpx solid;
+  border-radius: 20rpx;
+
+	font-weight: bold;
+}
+
+.item {
+  margin: 40rpx auto;
+  height: 100rpx;
+  width: 85%;
+
+  display: flex;
+  align-items: center; /* 设置垂直居中 */
+  justify-content: space-between;
+
+  font-size: small;
+}
+
+.itemBox {
+  position: relative;
+  height: 80rpx;
+  width: 80%;
+
+  display: flex;
+  align-items: center; /* 设置垂直居中 */
+
+  box-sizing: border-box;
+  border: darkgray 1rpx solid;
+  border-radius: 20rpx;
+
+}
+
+.itemImage {
+  width: 50rpx;
+  height: 50rpx;
+
+  margin:0 20rpx;
+}
+
+
+.RMB {
+  height: 50rpx;
+  width: 50rpx;
+  position: absolute;
+  right: 100rpx;
+  bottom: 10rpx;
+}
+
+.price {
+  position: absolute;
+  right: 20rpx;
+  bottom: 10rpx;
+}
+
+
+.totalCost {
+  position: fixed;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  
+  bottom: 7%;
+  left: 0;
+  right: 0;
+
+  background-color: #ffffff;
+  box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.1); 
+}
