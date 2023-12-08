@@ -30,28 +30,48 @@ Page({
       wx.getUserProfile({
         desc: '登陆后使用全部功能',
         success:(res)=> {
+          console.log(res,123);
           var userInfo = res.userInfo
+          var query = {
+            encryptedData:res.encryptedData,
+            iv:res.iv,
+            rawData:res.rawData,
+            signature:res.signature,
+          }
+          wx.login({
+            success:(res) => {
+              query.code = res.code;
+              console.log(query,"请求对象");
+              wx.cloud.callFunction({
+                name:"addUer",
+                data:{
+                  userInfo
+                }
+              }).then(res => {
+                this.setData({
+                  hasUserInfo:true,
+                  openID:res.result.data._openid
+                })
+                app.globalData.openID = this.data.openID;
+              })
 
-          wx.cloud.callFunction({
-            name:"addUer",
-            data:{
-              userInfo
+             
+              wx.showToast({
+                title: '登陆成功',
+              })
+
+            },
+            fail:(res) => {
+              wx.showToast({
+                title: '登录失败',
+              })
             }
-          }).then(res => {
-            this.setData({
-              hasUserInfo:true,
-              openID:res.result.data._openid
-            })
-            app.globalData.openID = this.data.openID;
           })
-         
-          wx.showToast({
-            title: '登陆成功',
-          })
-          wx.hideToast()
         },
         fail:(res)=> {
-          console.log('授权失败',res)
+          wx.showToast({
+            title: '授权失败',
+          })
         }
       })
     }

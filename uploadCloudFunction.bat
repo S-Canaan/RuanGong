@@ -1,0 +1,1 @@
+"F:\Program Files (x86)\Web\wechat_devtools\微信web开发者工具\cli.bat" cloud functions deploy --e finalcial-manage-9fyvagz42a0f837 --n quickstartFunctions --r --project "E:\SZU\软工\financialManaYun" --report_first --report
