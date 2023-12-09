@@ -10,7 +10,6 @@ Page({
     this.setData({
       openID:app.globalData.openID
     })
-    console.log(app.globalData.openID,123123123);
   },
 //退出登录
   loginOut() {
@@ -40,7 +39,6 @@ Page({
           wx.login({
             success:(res) => {
               query.code = res.code;
-              console.log(query,"请求对象");
               wx.cloud.callFunction({
                 name:"addUer",
                 data:{

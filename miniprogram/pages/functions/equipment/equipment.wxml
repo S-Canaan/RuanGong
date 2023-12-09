@@ -5,79 +5,95 @@
 <view class="selectSenson" >选择器械</view>
 <picker class="selector" mode="selector" id="manager" range="{{equipmentArr}}" bindchange="onChange" >{{equipment}}
 </picker>
-<button size="mini" type="primary" style="position: absolute; right: 0; display:block; width: 20%;">添加</button>
+<button size="mini" type="primary" bindtap="addArrayItem" style="position: absolute; right: 0; display:block; width: 20%;">添加</button>
 
 
-<view style="width: 80%;  display: flex; margin: 0 auto; line-height: 70rpx;">
-  <view class="title" style="display: inline-block; ">租聘费用</view>
-  <button size="mini" type="primary" style="display:inline-block; margin:0  20rpx; width: 20%;">更新</button>
-</view>
-<!-- <view class="title">租聘费用</view> -->
-<view class="Box" style="height: 300rpx;">
-  <view class="item">
+<view class="title">租聘费用</view>
+<view class="Box" style="height: 350rpx;">
+  <view class="item" bindtap="showInput" id="leaseTerm">
     <image class="itemImage" src="../../../image/equipment/clock.png"></image>
-    <view class="itemTitle">租期</view>
+    <view class="itemTitle">租期--{{leaseTerm}}</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="rentalAmount">
     <image class="itemImage" src="../../../image/equipment/price.png"></image>
-    <view class="itemTitle">租金金额</view>
+    <view class="itemTitle">租金金额--{{rentalAmount}}元</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="method">
     <image class="itemImage" src="../../../image/equipment/type.png"></image>
-    <view class="itemTitle">租金支付方式</view>
+    <view class="itemTitle">租金支付方式--{{method}}</view>
   </view>
 
   <image class="RMB" src="../../../image/equipment/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{rentalAmount}}</view>
 </view>
 
-<view style="width: 80%;  display: flex; margin: 0 auto; line-height: 70rpx;">
-  <view class="title" style="display: inline-block; ">折旧维护</view>
-  <button size="mini" type="primary" style="display:inline-block; margin:0  20rpx; width: 20%;">更新</button>
-</view>
-<view class="Box"  style="height: 300rpx;">
-  <view class="item">
+<view class="title">折旧维护</view>
+<view class="Box"  style="height: 350rpx;">
+  <view class="item" bindtap="showInput" id="lifespan">
     <image class="itemImage" src="../../../image/equipment/clock.png"></image>
-    <view class="itemTitle">估计寿命</view>
+    <view class="itemTitle">估计寿命--{{lifespan}}年</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="value">
     <image class="itemImage" src="../../../image/equipment/price.png"></image>
-    <view class="itemTitle">设备价值</view>
+    <view class="itemTitle">设备价值--{{value}}元</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="otherCost">
     <image class="itemImage" src="../../../image/equipment/type.png"></image>
-    <view class="itemTitle">其它维护费用</view>
+    <view class="itemTitle">其它维护费用--{{otherCost}}元</view>
   </view>
 
   <image class="RMB" src="../../../image/equipment/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{otherCost}}</view>
 </view>
 
-
-<view style="width: 80%;  display: flex; margin: 0 auto; line-height: 70rpx;">
-  <view class="title" style="display: inline-block; ">使用监测</view>
-  <button size="mini" type="primary" style="display:inline-block; margin:0  20rpx; width: 20%;">更新</button>
-</view>
-<view class="Box"  style="height: 100rpx;">
-  <view class="item">
+<view class="title">使用监测</view>
+<view class="Box"  style="height: 150rpx;">
+  <view class="item" bindtap="showInput" id="usedEffect">
     <image class="itemImage" src="../../../image/equipment/type.png"></image>
-    <view class="itemTitle">是否得到有效使用</view>
+    <view class="itemTitle">是否得到有效使用--{{usedEffect}}</view>
   </view>
+  <button size="mini" type="primary" style="position: absolute;bottom: -30px; right: -30px; margin:0  20rpx; width: 20%;" bindtap="updateEquipmentInfo">更新</button>
 </view>
 
-<button  type="warn" style="display:block; margin: 50px auto; width: 30%;">删除</button>
+<button  type="warn" bindtap="deleteSelf" style="display:block; margin: 50px auto; width: 30%;">删除</button>
 
 <view class="totalCost">
   <view>总成本</view>
   <view>
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{totalCost}}</view>
   </view>
 </view>
 <tabBar></tabBar>
 <view style="height: 100rpx;"></view>
 
+
+<!-- 弹窗蒙版 -->
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'></text>
+    <view class='back' bindtap='back'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' value="{{inputText}}" bindblur="updateDisplayText" focus="{{inputVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='confirm'>确定</view>
+</view>
+
+
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'>添加器械名称</text>
+    <view class='back' bindtap='addBack'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' bindblur="updateDisplayText" focus="{{addVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='addConfirm'>确定</view>
+</view>

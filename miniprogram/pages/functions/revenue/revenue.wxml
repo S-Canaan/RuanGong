@@ -1,76 +1,120 @@
 <!--pages/functions/revenue/revenue.wxml-->
 <navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick">123123123123</navigation>
 <view class="selectSenson" >选择季节</view>
-<picker class="selector" mode="selector" bindchange="onChange" range="{{sensonArr}}">{{selectSeason}}</picker>
+<picker class="selector" mode="selector" bindchange="onChange" range="{{seasonArr}}">{{season}}</picker>
+<!-- 
+<button size="mini" type="primary" bindtap="addArrayItem" style="position: absolute; top: 18%; right: 0; display:block; width: 20%;">添加</button> -->
 
 
 <view class="item">
   <view class="title">农品种类</view>
-  <view class="itemBox">
+  <view class="itemBox" bindtap="showInput" id="type">
     <image class="itemImage" src="../../../image/revenue/xiaomai.png"></image>
-    <view style="display: inline-block;">种植农业品</view>
+    <view style="display: inline-block;">种植农业品--{{type}}</view>
   </view>
 </view>
 
 <view class="item">
   <view class="title">播种</view>
-  <view class="itemBox">
+  <view class="itemBox" bindtap="showInput" id="seed">
     <image class="itemImage" src="../../../image/revenue/seed.png"></image>
-    <view style="display: inline-block;">播种花销</view>
+    <view style="display: inline-block;">播种花销--{{seed}}</view>
 
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{seed}}</view>
   </view>
 </view>
 
 <view class="item">
   <view class="title">灌溉</view>
-  <view class="itemBox">
+  <view class="itemBox" bindtap="showInput" id="water">
     <image class="itemImage" src="../../../image/revenue/water.png"></image>
-    <view style="display: inline-block;">灌溉花销</view>
+    <view style="display: inline-block;">灌溉花销--{{water}}</view>
 
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{water}}</view>
   </view>
 </view>
 
 <view class="item">
   <view class="title">施肥</view>
-  <view class="itemBox">
+  <view class="itemBox" bindtap="showInput" id="spread">
     <image class="itemImage" src="../../../image/revenue/spread.png"></image>
-    <view style="display: inline-block;">施肥花销</view>
+    <view style="display: inline-block;">施肥花销--{{spread}}</view>
 
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{spread}}</view>
   </view>
 </view>
 
 <view class="item">
   <view class="title">收割</view>
-  <view class="itemBox">
+  <view class="itemBox" bindtap="showInput" id="harvest">
     <image class="itemImage" src="../../../image/revenue//harvest.png"></image>
-    <view style="display: inline-block;">收割花销</view>
+    <view style="display: inline-block;">收割花销--{{harvest}}</view>
 
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{harvest}}</view>
   </view>
 </view>
 
 <view class="item">
   <view class="title">收获</view>
-  <view class="itemBox">
+  <view class="itemBox" bindtap="showInput" id="gains">
     <image class="itemImage" src="../../../image/revenue/gains.png"></image>
-    <view style="display: inline-block;">市场收获</view>
+    <view style="display: inline-block;">市场收获--{{gains}}</view>
 
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{gains}}</view>
   </view>
+  
 </view>
+
+<button size="mini" type="primary" style="display: block; margin:0 auto; width: 50%;" bindtap="updateSeasonInfo">更新</button>
 <view class="totalCost">
   <view>总成本</view>
   <view>
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{totalCost}}</view>
   </view>
 </view>
 <tabBar></tabBar>
+
+
+<button  type="warn" style="display:block; margin: 50px auto; width: 30%;" bindtap="deleteSelf">删除</button>
+<view class="totalCost">
+  <view>总利润</view>
+  <view>
+    <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
+    <view class="price">{{totalCost}}</view>
+  </view>
+</view>
+<tabBar></tabBar>
+
+<view style="height: 100rpx;"></view>
+
+<!-- 弹窗蒙版 -->
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'></text>
+    <view class='back' bindtap='back'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' value="{{inputText}}" bindblur="updateDisplayText" focus="{{inputVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='confirm'>确定</view>
+</view>
+
+
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'>添加土地名称</text>
+    <view class='back' bindtap='addBack'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' bindblur="updateDisplayText" focus="{{addVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='addConfirm'>确定</view>
+</view>

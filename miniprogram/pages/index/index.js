@@ -1,7 +1,8 @@
 // index.ts
-// 获取应用实例
+const app = getApp();
 Page({
   data: {
+    openID:app.globalData.openID,
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -38,6 +39,15 @@ Page({
   },
   // 事件处理函数
   gotoFunction:function(e){
+    this.setData({
+      openID:app.globalData.openID
+    })
+    if(!this.data.openID){
+      wx.showToast({
+        title: '请先登录',
+      })
+      return 
+    }
     const url = '../functions/' + e.target.id +'/' +e.target.id +'?id='+e.target.id ;
     wx.navigateTo({
       url,
@@ -50,6 +60,12 @@ Page({
         canIUseGetUserProfile: true
       })
     }
+  },
+  onshow(){
+    this.setData({
+      openID:app.globalData.openID
+    })
+    console.log(this.data.openID,1111);
   },
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗

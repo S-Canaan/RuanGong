@@ -50,7 +50,7 @@
   </view>
 
   <view bindtap="gotoEdit" class="editEnterInfo">
-    公司信息                                
+    编辑公司信息                                
     <image class="arrow" src="../../image/enterpr/arrow.png"></image>
   </view>
 
@@ -60,10 +60,10 @@
     </view>
     <view class="enterPhone">
     <image src="../../image/enterpr/phone.png" style="height: 30rpx; width: 30rpx;" class="enterOtherInfoImage"></image>
-    联系方式：{{phone}}</view>
+    联系方式：13827397989</view>
     <view class="enterEmail">
     <image src="../../image/enterpr/email.png" style="height: 30rpx; width: 30rpx;" class="enterOtherInfoImage"></image>
-    联系邮箱：{{email}}</view>
+    联系邮箱：1764582001@qq.com</view>
 
     <view class="verison">版本号：0.0.1</view>
   </view>

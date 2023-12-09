@@ -9,10 +9,10 @@ Page({
     addVisible:false,
     key:"",
     inputValue:"",
-    landArr:[],
-    land:'',
     integerValue:0,
     totalCost:0,
+    landArr:[],
+    land:'',
     landPurchaseCost:0,
     serviceLife:0,
     leaseTerm:0,
@@ -36,7 +36,6 @@ Page({
       inputText: this.data[id], // 将输入框内容设置为 view 中的文字
       key:id
     });  
-    
   },
   confirm() {
     // console.log(this.data.key);
@@ -173,9 +172,7 @@ Page({
             land:landArr[0] || '无土地',
             landArr:landArr,
           })
-          if(this.data.land != '无土地'){
-            this.getLandInfo();
-          }
+          this.getLandInfo();
         })
       }
       else{
@@ -203,9 +200,7 @@ Page({
         land:landArr[0] || '无土地',
         landArr:landArr,
       })
-      if(this.data.land != '无土地'){
-        this.getLandInfo();
-      }
+      this.getLandInfo();
     })
    
   },

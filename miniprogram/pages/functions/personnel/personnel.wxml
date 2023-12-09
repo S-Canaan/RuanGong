@@ -1,73 +1,101 @@
 <!--pages/functions/personnel/personnel.wxml-->
 <navigation id="navigation" indexId="{{id}}" bind:customClick="onCustomClick"></navigation>
 
-<view class="selectSenson" >选择土地</view>
+<view class="selectSenson" >选择人员</view>
 <picker class="selector" mode="selector" id="manager" range="{{personArr}}" bindchange="onChange" >{{person}}
 </picker>
+<button size="mini" type="primary" bindtap="addArrayItem" style="position: absolute; right: 0; display:block; width: 20%;">添加</button>
 
 <view class="title">薪资工资</view>
-<view class="Box" style="height: 200rpx;">
-  <view class="item">
+<view class="Box" style="height: 250rpx;">
+  <view class="item"  bindtap="showInput" id="basicSalary">
     <image class="itemImage" src="../../../image/personnel/wallet.png"></image>
-    <view class="itemTitle">基本工资</view>
+    <view class="itemTitle">基本工资--{{basicSalary}}</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="workHour">
     <image class="itemImage" src="../../../image/personnel/clock.png"></image>
-    <view class="itemTitle">工时</view>
+    <view class="itemTitle">工时--{{workHour}}</view>
   </view>
 
   <image class="RMB" src="../../../image/personnel/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{basicSalary}}</view>
 </view>
 
 
 <view class="title">福利成本</view>
-<view class="Box"  style="height: 300rpx;">
-  <view class="item">
+<view class="Box"  style="height: 350rpx;">
+  <view class="item" bindtap="showInput" id="sInsurance">
     <image class="itemImage" src="../../../image/personnel/insure1.png"></image>
-    <view class="itemTitle">社会保险</view>
+    <view class="itemTitle">社会保险--{{sInsurance}}</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="mInsurance">
     <image class="itemImage" src="../../../image/personnel/insure2.png"></image>
-    <view class="itemTitle">医疗保险</view>
+    <view class="itemTitle">医疗保险--{{mInsurance}}</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="pension">
     <image class="itemImage" src="../../../image/personnel/pension.png"></image>
-    <view class="itemTitle">养老金</view>
+    <view class="itemTitle">养老金--{{pension}}</view>
   </view>
 
   <image class="RMB" src="../../../image/personnel/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{sInsurance+mInsurance+pension}}</view>
 </view>
 
 
 
 <view class="title">劳动生产</view>
-<view class="Box"  style="height: 200rpx;">
-  <view class="item">
+<view class="Box"  style="height: 250rpx;">
+  <view class="item" bindtap="showInput" id="KPI">
     <image class="itemImage" src="../../../image/personnel/type.png"></image>
-    <view class="itemTitle">员工工作产出</view>
+    <view class="itemTitle">员工工作产出--{{KPI}}</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="meet">
     <image class="itemImage" src="../../../image/personnel/method.png"></image>
-    <view class="itemTitle">KPI是否达标</view>
+    <view class="itemTitle">KPI是否达标--{{meet}}</view>
   </view>
 
   <image class="RMB" src="../../../image/personnel/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{KPI}}</view>
+  <button size="mini" type="primary" style="position: absolute;bottom: -30px; right: -30px; margin:0  20rpx; width: 20%;" bindtap="updatePersonInfo">更新</button>
 </view>
-
+<button  type="warn" style="display:block; margin: 50px auto; width: 30%;" bindtap="deleteSelf">删除</button>
 <view class="totalCost">
-  <view>总成本</view>
+  <view>总利润</view>
   <view>
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{totalCost}}</view>
   </view>
 </view>
 <tabBar></tabBar>
 
-<view style="height: 200rpx;"></view>
+<view style="height: 100rpx;"></view>
+
+<!-- 弹窗蒙版 -->
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'></text>
+    <view class='back' bindtap='back'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' value="{{inputText}}" bindblur="updateDisplayText" focus="{{inputVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='confirm'>确定</view>
+</view>
+
+
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'>添加人员名称</text>
+    <view class='back' bindtap='addBack'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' bindblur="updateDisplayText" focus="{{addVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='addConfirm'>确定</view>
+</view>
