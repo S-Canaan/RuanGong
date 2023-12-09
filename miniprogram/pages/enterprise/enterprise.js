@@ -8,12 +8,39 @@ Page({
    */
   data: {
     openID:app.globalData.openID,
-    enterName:"企业名称",
-    enterAddress:"企业地址"
+    name:"",
+    address:"",
+    date:"",
+    num:"",
+    introduction:"",
   },
   gotoEdit: function(){
+    const enterpriseInfo = {
+      name:this.data.name,
+      address:this.data.address,
+      date:this.data.date,
+      num:this.data.num,
+      introduction:this.data.introduction,
+    }
     wx.navigateTo({
-      url: '../editEnterprise/editEnterprise',
+      url: '../editEnterprise/editEnterprise?enterpriseInfo=' + JSON.stringify(enterpriseInfo),
+    })
+  },
+  loadData(){
+    this.setData({
+      openID:app.globalData.openID
+    })
+    wx.cloud.callFunction({
+      name:'getEnterpriseInfo'
+    }).then(res => {
+      const enterpriseInfo = res.result.enterpriseInfo
+      this.setData({
+        name:enterpriseInfo.name,
+        address:enterpriseInfo.address,
+        date:enterpriseInfo.date,
+        num:enterpriseInfo.num,
+        introduction:enterpriseInfo.introduction,
+      })
     })
   },
 
@@ -21,25 +48,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.setData({
-      openID:app.globalData.openID
-    })
+    this.loadData();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.setData({
-      openID:app.globalData.openID
-    })
+    this.loadData();
   },
 
   /**

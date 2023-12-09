@@ -30,7 +30,6 @@ Page({
       wx.getUserProfile({
         desc: '登陆后使用全部功能',
         success:(res)=> {
-          console.log(res,123);
           var userInfo = res.userInfo
           var query = {
             encryptedData:res.encryptedData,

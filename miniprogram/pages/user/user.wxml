@@ -12,7 +12,7 @@
           </view>
       </view>
   </view>
-  <button open-type="getUserInfo" bindtap="getUersProfile" class="btn">登录</button>
+  <button bindtap="getUersProfile" class="btn">登录</button>
 </block>
 <!-- 登陆后的页面 -->
 <block wx:if="{{hasUserInfo}}">

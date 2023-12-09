@@ -4,91 +4,125 @@
 <view class="selectSenson" >选择土地</view>
 <picker class="selector" mode="selector" id="manager" range="{{landArr}}" bindchange="onChange" >{{land}}
 </picker>
+<button size="mini" type="primary" bindtap="addArrayItem" style="position: absolute; right: 0; display:block; width: 20%;">添加</button>
+
 
 <view class="title">折旧费用</view>
-<view class="Box" style="height: 200rpx;">
-  <view class="item">
+<view class="Box" style="height: 250rpx;">
+  <view class="item"  bindtap="showInput" id="landPurchaseCost">
     <image class="itemImage" src="../../../image/land/land.png"></image>
-    <view class="itemTitle">土地购买成本</view>
+    <view class="itemTitle">土地购买成本--{{landPurchaseCost}}元</view>
   </view>
 
-  <view class="item">
+  <view class="item"  bindtap="showInput" id="serviceLife">
     <image class="itemImage" src="../../../image/land/clock.png"></image>
-    <view class="itemTitle">使用寿命</view>
+    <view class="itemTitle">使用寿命--{{serviceLife}}年</view>
   </view>
 
   <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{landPurchaseCost}}</view>
+  <!-- <button size="mini" type="primary" style="position: absolute;bottom: -30px; right: -30px; margin:0  20rpx; width: 20%;" bindtap="updateLandInfo">更新</button> -->
 </view>
 
 
 <view class="title">租聘费用</view>
-<view class="Box"  style="height: 300rpx;">
-  <view class="item">
+<view class="Box"  style="height: 350rpx;">
+  <view class="item" bindtap="showInput" id="leaseTerm">
     <image class="itemImage" src="../../../image/land/clock.png"></image>
-    <view class="itemTitle">租期</view>
+    <view class="itemTitle">租期--{{leaseTerm}}年</view>
   </view>
 
-  <view class="item">
-    <image class="itemImage" src="../../../image/land/clock.png"></image>
-    <view class="itemTitle">租金金额</view>
-  </view>
-
-  <view class="item">
+  <view class="item"  bindtap="showInput" id="rentalAmount">
     <image class="itemImage" src="../../../image/land/price.png"></image>
-    <view class="itemTitle">租金金额</view>
+    <view class="itemTitle">租金金额--{{rentalAmount}}元</view>
+  </view>
+
+  <view class="item"  bindtap="showInput" id="paymentMethod">
+    <image class="itemImage" src="../../../image/land/type.png"></image>
+    <view class="itemTitle">租金支付方式--{{paymentMethod}}</view>
   </view>
 
   <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{rentalAmount}}</view>
+  <!-- <button size="mini" type="primary" style="position: absolute;bottom: -30px; right: -30px; margin:0  20rpx; width: 20%;" bindtap="updateLandInfo">更新</button> -->
 </view>
 
 
 
 <view class="title">租聘信息</view>
-<view class="Box"  style="height: 400rpx;">
-  <view class="item">
+<view class="Box"  style="height: 450rpx;">
+  <view class="item" bindtap="showInput" id="type">
     <image class="itemImage" src="../../../image/land/type.png"></image>
-    <view class="itemTitle">类型</view>
+    <view class="itemTitle">类型--{{type}}</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="cost">
     <image class="itemImage" src="../../../image/land/price.png"></image>
-    <view class="itemTitle">费用</view>
+    <view class="itemTitle">费用--{{cost}}元</view>
   </view>
 
-  <view class="item">
+  <view class="item" bindtap="showInput" id="date">
     <image class="itemImage" src="../../../image/land/clock.png"></image>
-    <view class="itemTitle">日期</view>
+    <view class="itemTitle">日期--{{date}}</view>
   </view>
 
-  <view class="item"  >
+  <view class="item" bindtap="showInput" id="fixed">
     <image class="itemImage" src="../../../image/land/method.png"></image>
-    <view class="itemTitle">是否固定支出</view>
+    <view class="itemTitle">是否固定支出--{{fixed}}</view>
   </view>
 
   <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">{{cost}}</view>
+  <!-- <button size="mini" type="primary" style="position: absolute;bottom: -30px; right: -30px; margin:0  20rpx; width: 20%;" bindtap="updateLandInfo">更新</button> -->
 </view>
 
 
 <view class="title">政策信息</view>
-<view class="Box" style="height: 100rpx;">
-  <view class="item">
+<view class="Box" style="height: 150rpx;">
+  <view class="item" bindtap="showInput" id="policy">
     <image class="itemImage" src="../../../image/land/policy.png"></image>
-    <view class="itemTitle">政策优惠</view>
+    <view class="itemTitle">政策优惠--{{policy}}%</view>
   </view>
 
   <image class="RMB" src="../../../image/land/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
+  <view class="price">-{{integerValue}}</view>
+  <button size="mini" type="primary" style="position: absolute;bottom: -30px; right: -30px; margin:0  20rpx; width: 20%;" bindtap="updateLandInfo">更新</button>
 </view>
+
+<button  type="warn" style="display:block; margin: 50px auto; width: 30%;" bindtap="deleteSelf">删除</button>
 
 <view class="totalCost">
   <view>总成本</view>
   <view>
     <image class="RMB" src="../../../image/revenue/RMB.png" alt=""/>
-    <view class="price">xx.xx</view>
+    <view class="price">{{totalCost}}</view>
   </view>
 </view>
 <tabBar></tabBar>
-<view style="height: 200rpx;"></view>
+<view style="height: 100rpx;"></view>
+
+<!-- 弹窗蒙版 -->
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{inputVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'></text>
+    <view class='back' bindtap='back'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' value="{{inputText}}" bindblur="updateDisplayText" focus="{{inputVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='confirm'>确定</view>
+</view>
+
+
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{addVisible}}'>
+  <view class='windowRow'>
+    <text class='userTitle'>添加土地名称</text>
+    <view class='back' bindtap='addBack'>返回</view>
+  </view>
+  <view style="width:100%" class='wishName'>
+    <input style="width:100%" class='wish_put' bindblur="updateDisplayText" focus="{{addVisible}}"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='addConfirm'>确定</view>
+</view>

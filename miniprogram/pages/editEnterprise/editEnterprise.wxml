@@ -9,6 +9,11 @@
 	<view class="itemContent" data-parent-id="name">{{name}}</view>                       
   <image class="arrow" src="../../image/enterpr/arrow.png"  data-parent-id="name"></image>
 </view>
+<picker mode="region" class="infoItem" id="address" bindchange="addrChangeHandler">
+	公司地址                        
+	<view class="itemContent"  data-parent-id="address">{{address}}</view>  
+  <image class="arrow" src="../../image/enterpr/arrow.png" data-parent-id="address"></image>
+	</picker>
 <picker mode="date" class="infoItem"  bindchange="dateChangeHandler" value="date" id="date">
 	成立日期                        
 	<view class="itemContent"  data-parent-id="date">{{date}}</view>  
@@ -24,5 +29,6 @@
 	<view class="itemContent" data-parent-id="introduction">{{introduction}}</view>  
   <image class="arrow" src="../../image/enterpr/arrow.png" data-parent-id="introduction"></image>
 </view>
+
 <textarea  class="inputArea" wx:if="{{inputVisible}}" value="{{inputText}}" bindblur="updateDisplayText" focus="{{inputVisible}}"></textarea >
 <button bindtap="saveChanges" class="save-button">保存修改</button>

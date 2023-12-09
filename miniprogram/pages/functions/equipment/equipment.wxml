@@ -5,8 +5,14 @@
 <view class="selectSenson" >选择器械</view>
 <picker class="selector" mode="selector" id="manager" range="{{equipmentArr}}" bindchange="onChange" >{{equipment}}
 </picker>
+<button size="mini" type="primary" style="position: absolute; right: 0; display:block; width: 20%;">添加</button>
 
-<view class="title">租聘费用</view>
+
+<view style="width: 80%;  display: flex; margin: 0 auto; line-height: 70rpx;">
+  <view class="title" style="display: inline-block; ">租聘费用</view>
+  <button size="mini" type="primary" style="display:inline-block; margin:0  20rpx; width: 20%;">更新</button>
+</view>
+<!-- <view class="title">租聘费用</view> -->
 <view class="Box" style="height: 300rpx;">
   <view class="item">
     <image class="itemImage" src="../../../image/equipment/clock.png"></image>
@@ -27,8 +33,10 @@
   <view class="price">xx.xx</view>
 </view>
 
-
-<view class="title">折旧维护</view>
+<view style="width: 80%;  display: flex; margin: 0 auto; line-height: 70rpx;">
+  <view class="title" style="display: inline-block; ">折旧维护</view>
+  <button size="mini" type="primary" style="display:inline-block; margin:0  20rpx; width: 20%;">更新</button>
+</view>
 <view class="Box"  style="height: 300rpx;">
   <view class="item">
     <image class="itemImage" src="../../../image/equipment/clock.png"></image>
@@ -50,17 +58,18 @@
 </view>
 
 
-
-<view class="title">使用监测</view>
+<view style="width: 80%;  display: flex; margin: 0 auto; line-height: 70rpx;">
+  <view class="title" style="display: inline-block; ">使用监测</view>
+  <button size="mini" type="primary" style="display:inline-block; margin:0  20rpx; width: 20%;">更新</button>
+</view>
 <view class="Box"  style="height: 100rpx;">
   <view class="item">
     <image class="itemImage" src="../../../image/equipment/type.png"></image>
     <view class="itemTitle">是否得到有效使用</view>
   </view>
-
-  <image class="RMB" src="../../../image/equipment/RMB.png" alt=""/>
-  <view class="price">xx.xx</view>
 </view>
+
+<button  type="warn" style="display:block; margin: 50px auto; width: 30%;">删除</button>
 
 <view class="totalCost">
   <view>总成本</view>
@@ -70,5 +79,5 @@
   </view>
 </view>
 <tabBar></tabBar>
-<view style="height: 200rpx;"></view>
+<view style="height: 100rpx;"></view>
 

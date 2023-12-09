@@ -19,15 +19,15 @@
   <view class="header">
     <image src="../../image/test/img.png" alt="" class="enterImage"/>
     <view class="enterNaAdBlock">
-      <view class="enterName word3">{{enterName}}</view>
-      <view class="enterAddress word4">{{enterAddress}}</view>
+      <view class="enterName">{{name}}</view>
+      <view class="enterAddress">{{address}}</view>
     </view>
   </view>
 
   <view class="enterMainInfo">
     <view class="enterInfo">
       <view class="enterInfoTitle">企业信息</view>
-      <view class="enterInfoContent"> 这是一段需要自动换行的文本，这是一段需要自动换行的文本，这是一段需要自动换行的文本。</view>
+      <view class="enterInfoContent"> {{introduction}}</view>
     </view>
 
     <view class="servers">
@@ -60,10 +60,10 @@
     </view>
     <view class="enterPhone">
     <image src="../../image/enterpr/phone.png" style="height: 30rpx; width: 30rpx;" class="enterOtherInfoImage"></image>
-    联系方式：123-123-123</view>
+    联系方式：{{phone}}</view>
     <view class="enterEmail">
     <image src="../../image/enterpr/email.png" style="height: 30rpx; width: 30rpx;" class="enterOtherInfoImage"></image>
-    联系邮箱：123456789@email</view>
+    联系邮箱：{{email}}</view>
 
     <view class="verison">版本号：0.0.1</view>
   </view>

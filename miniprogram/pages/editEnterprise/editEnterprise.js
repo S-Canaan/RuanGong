@@ -1,14 +1,17 @@
 // pages/editEnterprise/editEnterprise.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name:"一家公司",
+    openID:app.globalData.openID,
+    address:"",
+    name:"",
     date:"",
-    num:"91",
-    introduction:"我们公司很好我们公司很好我们公司很好我们公司很好我们公司很好",
+    num:"",
+    introduction:"",
     inputVisible: false,
     inputText: "",
     key:""
@@ -32,17 +35,51 @@ Page({
   dateChangeHandler: function (event) {
     const date = event.detail.value;
     this.setData({
-      date: date
+      date
+    });
+  },
+  addrChangeHandler: function (event) {
+    const address = event.detail.value;
+    this.setData({
+      address
     });
   },
   saveChanges:function(){
+    const enterpriseInfo = {
+      name:this.data.name,
+      address:this.data.address,
+      date:this.data.date,
+      num:this.data.num,
+      introduction:this.data.introduction,
+    }
+    wx.cloud.callFunction({
+      name:'postEnterprise',
+      data:{
+        enterpriseInfo
+      }
+    }).then(res => {
+      console.log(res);
+      if(res.result.success == true){
+        wx.showToast({
+          title: '保存成功',
+        })
 
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    const enterpriseInfo = JSON.parse(options.enterpriseInfo)
+    
+    this.setData({
+      name:enterpriseInfo.name,
+      address:enterpriseInfo.address,
+      date:enterpriseInfo.date,
+      num:enterpriseInfo.num,
+      introduction:enterpriseInfo.introduction,
+    })
   },
 
   /**
